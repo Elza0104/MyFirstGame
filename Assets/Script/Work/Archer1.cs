@@ -24,29 +24,29 @@ public class Archer1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("JUMP!");
-            GetComponent<Rigidbody2D>().AddForce(Vector3.up * 200f);
+            GetComponent<Rigidbody2D>().AddForce(Vector3.up * 1000f);
 
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("LEFT!");
+            //Debug.Log("LEFT!");
             Sr.flipX = false;
-            transform.Translate(-1f, 0f, 0f);
+            transform.Translate(-0.05f, 0f, 0f);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("migi!");
+            //Debug.Log("migi!");
             Sr.flipX = true;
-            transform.Translate(1f, 0f, 0f);
+            transform.Translate(0.05f, 0f, 0f);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             GameObject ArrowClone = Instantiate(ArrowObj);
             ArrowClone.transform.position = shootPostf.position;
-            ArrowClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 1) * 100f);
+            //ArrowClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 1) * 300f);
         }
     }
 }
