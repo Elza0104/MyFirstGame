@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
         Debug.Log("qwhdqwd");
         GameObject Arrow1Clone = Instantiate(ArrowObj);
         Arrow1Clone.transform.position = shootPostf.position;
-        Arrow1Clone.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * 400f);
+        Arrow1Clone.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * 2000f);
     }
 
 }

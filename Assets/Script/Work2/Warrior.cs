@@ -5,11 +5,13 @@ using TMPro;
 
 public class Warrior : MonoBehaviour
 {
-    public UI aos;
-
+    public GameObject aos;
+    TextMeshProUGUI sos;
     // Start is called before the first frame update
     void Start()
     {
+        
+        sos = aos.GetComponent<TextMeshProUGUI>();
         
     }
 
@@ -27,7 +29,12 @@ public class Warrior : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)  //Archer와 상호작용이 시작됬을 때
     {
-        Debug.Log("아래");
-        aos.
+        
+        if (col.gameObject.tag == "Arrow")
+        {
+            sos.text = "qt";
+        }
+        
+
     }
 }

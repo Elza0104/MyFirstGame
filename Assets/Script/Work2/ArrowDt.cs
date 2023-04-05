@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class Hit : MonoBehaviour
+public class ArrowDt : MonoBehaviour
 {
-    TextMeshProUGUI tt;
-    int score;
     // Start is called before the first frame update
     void Start()
     {
-        tt = GetComponent<TextMeshProUGUI>();
+        
     }
 
     // Update is called once per frame
@@ -18,10 +15,8 @@ public class Hit : MonoBehaviour
     {
         
     }
-    public void ScoreUp(int value)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("88");
-        score += value;
-        tt.text = "Hit - " + score;
+        Destroy(gameObject, 0.1f);
     }
 }
