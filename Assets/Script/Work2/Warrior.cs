@@ -7,6 +7,8 @@ public class Warrior : MonoBehaviour
 {
     public GameObject aos;
     TextMeshProUGUI sos;
+    int score;
+    int value;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +29,14 @@ public class Warrior : MonoBehaviour
             transform.Translate(0.1f, 0f, 0f);
         }
     }
+    
     void OnCollisionEnter2D(Collision2D col)  //Archer와 상호작용이 시작됬을 때
     {
         
         if (col.gameObject.tag == "Arrow")
         {
-            sos.text = "qt";
+            score += value;
+            sos.text = "qt " + value;
         }
         
 
